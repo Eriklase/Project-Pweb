@@ -11,11 +11,18 @@ Auth::routes();
 // Route Login Manual
 Route::get('/login', [App\Http\Controllers\LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [App\Http\Controllers\LoginController::class, 'login']);
+
+Route::get('/register', [App\Http\Controllers\RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [App\Http\Controllers\RegisterController::class, 'register']);
+
+
 Route::post('/logout', [App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
 Route::get('/settings', [App\Http\Controllers\HomeController::class, 'settings'])->name('settings');
+Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 
 // Admin Routes
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {

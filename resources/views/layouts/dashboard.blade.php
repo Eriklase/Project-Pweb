@@ -252,8 +252,12 @@
                                     <div class="fw-bold text-dark">{{ auth()->user()->name }}</div>
                                     <small class="text-muted text-capitalize">{{ auth()->user()->role }}</small>
                                 </div>
-                                <div class="rounded-circle overflow-hidden border" style="width: 40px; height: 40px;">
-                                    <img src="{{ asset('images/admin-profile.jpg') }}" alt="Profile" style="width: 100%; height: 100%; object-fit: cover;">
+                                <div class="rounded-circle overflow-hidden border bg-light d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                    @if(auth()->user()->role == 'admin')
+                                        <img src="{{ asset('images/admin-profile.jpg') }}" alt="Profile" style="width: 100%; height: 100%; object-fit: cover;">
+                                    @else
+                                        <i class="bi bi-person text-muted fs-5"></i>
+                                    @endif
                                 </div>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-2 mt-3 rounded-3" aria-labelledby="profileDropdown">

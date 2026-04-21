@@ -59,7 +59,7 @@
 
             <div class="form-footer">
                 <p style="color: var(--text-muted); font-size: 0.875rem;">
-                    Already have an account? <a href="{{ route('login') }}" style="color: #818cf8;">Login here</a>
+                    Already have an account? <a href="{{ route('login') }}" style="color: #818cf8;">Login</a>
                 </p>
             </div>
         </form>

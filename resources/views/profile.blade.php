@@ -12,8 +12,12 @@
     <div class="col-lg-4">
         <div class="card mb-4 text-center">
             <div class="card-body">
-                <div class="rounded-circle overflow-hidden border mx-auto mb-3" style="width: 150px; height: 150px;">
-                    <img src="{{ asset('images/admin-profile.jpg') }}" alt="Profile" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="rounded-circle overflow-hidden border bg-light mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 150px; height: 150px;">
+                    @if(auth()->user()->role == 'admin')
+                        <img src="{{ asset('images/admin-profile.jpg') }}" alt="Profile" style="width: 100%; height: 100%; object-fit: cover;">
+                    @else
+                        <i class="bi bi-person text-muted display-1"></i>
+                    @endif
                 </div>
                 <h5 class="fw-bold mb-0">{{ auth()->user()->name }}</h5>
                 <p class="text-muted text-capitalize">{{ auth()->user()->role }}</p>

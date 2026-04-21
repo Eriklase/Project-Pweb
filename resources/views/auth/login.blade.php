@@ -47,8 +47,12 @@
             </div>
 
             <button type="submit" class="btn-login">
-                {{ __('Login to Dashboard') }}
+                {{ __('Login') }}
             </button>
+            
+            <a href="{{ url('/') }}" class="text-decoration-none d-block text-center mt-2" style="color: #818cf8;font-size: 14px;">
+                {{ __('Kembali') }}
+            </a>
 
             <div class="form-footer">
                 @if (Route::has('password.request'))
